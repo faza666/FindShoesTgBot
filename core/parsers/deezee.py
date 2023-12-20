@@ -3,6 +3,7 @@ from aiogram.utils.markdown import hlink, hbold, hstrikethrough
 import asyncio
 
 from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 
@@ -11,8 +12,8 @@ async def set_driver():
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-blink-features=AutomationControlled')
-    options.binary_location = '/usr/local/bin/'
-    driver = webdriver.Firefox(options=options)
+    service = webdriver.FirefoxService(executable_path=GeckoDriverManager().install())
+    driver = webdriver.Firefox(options=options, service=service)
     return driver
 
 
