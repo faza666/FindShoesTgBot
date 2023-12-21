@@ -1,5 +1,5 @@
 import asyncio
-from core.parsers import deezee, evzuttya, halloween, modivo
+from parsers import evzuttya, modivo, halloween, deezee
 
 
 async def find_shoes():

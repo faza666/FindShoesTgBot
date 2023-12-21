@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from aiogram.utils.markdown import hlink, hbold, hstrikethrough
-from core.parsers.common import get_page
+from parsers.common import get_page
 
 
 async def get_cards():
